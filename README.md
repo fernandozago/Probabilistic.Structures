@@ -2,6 +2,9 @@
 
 - Added TopK Probabilistic Structure
 - Top-K: What are the k most frequent values in the data stream?
+ 
+* Install the package: https://www.nuget.org/packages/Probabilistic.Structures
+
 ```C#
 using Probabilistic.Structures.TopKImpl;
 
