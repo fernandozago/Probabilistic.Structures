@@ -30,7 +30,7 @@ topk.Add(1);
 //{ Value: '2', Count: 4 }
 //{ Value: '3', Count: 3 }
 //{ Value: '4', Count: 2 }
-foreach (var item in topK.Top())
+foreach (var item in topk.Top())
 {
     Console.WriteLine(item);
 }
