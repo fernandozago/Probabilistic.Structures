@@ -43,4 +43,6 @@ bf.Add(1);
 Console.WriteLine($"1 exists ? {bf.Exists(1)}"); //Possibly
 Console.WriteLine($"2 exists ? {bf.Exists(2)}"); //No
 ```
+![image](https://github.com/fernandozago/Probabilistic.Structures/assets/12010709/50866c4a-7b24-4d9e-aac9-558191291ab4)
+
 
