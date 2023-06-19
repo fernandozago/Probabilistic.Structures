@@ -9,7 +9,7 @@ using Probabilistic.Structures.TopKImpl;
 /// <param name="depth">How many arrays you want to create to keep track of items fingerprints</param>
 /// <param name="width">How many buckets we have inside each array</param>
 /// <param name="decay">How often the items will be decaying</param>
-TopK<int> topk = new TopK<int>(4, 5, 1000, 0.9);
+HeavyKeeper<int> topk = new HeavyKeeper<int>(4, 5, 1000, 0.9);
 
 // Add as many as you want
 for (var i = 0; i <= 5; i++)
