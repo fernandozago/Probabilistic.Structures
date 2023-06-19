@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33801.468
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C7DE2F8C-F90C-425C-B3D9-44A64FBF3DD2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A3CEE19B-AA6C-408C-A96C-B26A6600D4C3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "benchmarks", "benchmarks", "{7CF0066D-FA05-4026-9044-20D5B5CF57A2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Probabilistic.Structures", "src\Probabilistic.Structures\Probabilistic.Structures.csproj", "{168EEE91-DE2D-4D0E-8485-AC7EE2F2A1FB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Probabilistic.Structures.Benchmarks", "benchmarks\Probabilistic.Structures.Benchmarks\Probabilistic.Structures.Benchmarks.csproj", "{409E45A6-5CC5-4DDB-83C4-C23DBCD521F5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Probabilistic.Structures.Tests", "tests\Probabilistic.Structures.Tests.NET5\Probabilistic.Structures.Tests.csproj", "{9D679973-C2B1-4B19-9C70-6BB5FEF981C5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{168EEE91-DE2D-4D0E-8485-AC7EE2F2A1FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{168EEE91-DE2D-4D0E-8485-AC7EE2F2A1FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{168EEE91-DE2D-4D0E-8485-AC7EE2F2A1FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{168EEE91-DE2D-4D0E-8485-AC7EE2F2A1FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{409E45A6-5CC5-4DDB-83C4-C23DBCD521F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{409E45A6-5CC5-4DDB-83C4-C23DBCD521F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{409E45A6-5CC5-4DDB-83C4-C23DBCD521F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{409E45A6-5CC5-4DDB-83C4-C23DBCD521F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D679973-C2B1-4B19-9C70-6BB5FEF981C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D679973-C2B1-4B19-9C70-6BB5FEF981C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D679973-C2B1-4B19-9C70-6BB5FEF981C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D679973-C2B1-4B19-9C70-6BB5FEF981C5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{168EEE91-DE2D-4D0E-8485-AC7EE2F2A1FB} = {C7DE2F8C-F90C-425C-B3D9-44A64FBF3DD2}
+		{409E45A6-5CC5-4DDB-83C4-C23DBCD521F5} = {7CF0066D-FA05-4026-9044-20D5B5CF57A2}
+		{9D679973-C2B1-4B19-9C70-6BB5FEF981C5} = {A3CEE19B-AA6C-408C-A96C-B26A6600D4C3}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {71ABD0BD-34D0-4476-AD06-DFDBAA0F8141}
+	EndGlobalSection
+EndGlobal
