@@ -1,5 +1,5 @@
 ﻿using BenchmarkDotNet.Running;
-using Probabilistic.Structures.Benchmarks;
+using Probabilistic.Structures.Benchmarks.HeavyKeeper.Benchmarks;
 
 do
 {
@@ -22,8 +22,8 @@ do
 
 void RunSimpleBench()
 {
-    Console.WriteLine($"\nRunning {nameof(TopK_SimpleBenchmark)}");
-    BenchmarkRunner.Run<TopK_SimpleBenchmark>();
+    Console.WriteLine($"\nRunning {nameof(HeavyKeeperBenchmarks)}");
+    BenchmarkRunner.Run<HeavyKeeperBenchmarks>();
 }
 
 void Run_FullBench()

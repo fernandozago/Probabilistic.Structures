@@ -24,7 +24,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Probabilistic.Structures.Te
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{56F46F20-6C91-4890-93FD-D1E6931EA82E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TopK.Sample", "samples\TopK.Sample\TopK.Sample.csproj", "{DE1FA9B9-3A47-4E7F-933C-AEC84B4CDB44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeavyKeeper.Sample", "samples\TopK.Sample\HeavyKeeper.Sample.csproj", "{DE1FA9B9-3A47-4E7F-933C-AEC84B4CDB44}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{957E5CA1-3463-461C-82AE-B097D3C34B7D}"
 	ProjectSection(SolutionItems) = preProject

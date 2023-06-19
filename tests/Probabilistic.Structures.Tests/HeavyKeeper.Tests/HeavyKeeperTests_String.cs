@@ -1,9 +1,9 @@
 ﻿using Probabilistic.Structures.HeavyKeeperImpl;
 
-namespace TopKVal.Tests
+namespace Probabilistic.Structures.Tests.HeavyKeeper.Tests
 {
     [TestFixture]
-    public class TopKTests_String
+    public class HeavyKeeperTests_String
     {
         private HeavyKeeper<string> subject = new(k: 3, depth: 4, width: 100, decay: 1.05);
 

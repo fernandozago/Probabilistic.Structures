@@ -2,13 +2,13 @@
 using BenchmarkDotNet.Jobs;
 using Probabilistic.Structures.HeavyKeeperImpl;
 
-namespace Probabilistic.Structures.Benchmarks;
+namespace Probabilistic.Structures.Benchmarks.HeavyKeeper.Benchmarks;
 
 [MemoryDiagnoser]
 [SimpleJob(RuntimeMoniker.Net50)]
 [SimpleJob(RuntimeMoniker.Net60)]
 [SimpleJob(RuntimeMoniker.Net70)]
-public abstract class BaseTopKBenchmarks
+public abstract class BaseHeavyKeeper
 {
 
 #nullable disable
@@ -18,7 +18,7 @@ public abstract class BaseTopKBenchmarks
 
     private readonly Random _random =
 #if NET5_0
-        new (Guid.NewGuid().GetHashCode());
+        new(Guid.NewGuid().GetHashCode());
 #else
         Random.Shared;
 #endif
