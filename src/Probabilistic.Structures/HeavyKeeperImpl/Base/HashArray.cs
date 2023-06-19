@@ -1,4 +1,4 @@
-﻿namespace Probabilistic.Structures.TopKImpl.Base;
+﻿namespace Probabilistic.Structures.HeavyKeeperImpl.Base;
 
 internal class HashArray<T>
 {
@@ -7,7 +7,7 @@ internal class HashArray<T>
     private readonly double _decay;
     private readonly Random _random =
 #if NET5_0
-        new (Guid.NewGuid().GetHashCode());
+        new(Guid.NewGuid().GetHashCode());
 #else
         Random.Shared;
 #endif

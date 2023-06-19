@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using BenchmarkDotNet.Jobs;
-using Probabilistic.Structures.TopKImpl;
+using Probabilistic.Structures.HeavyKeeperImpl;
 
 namespace Probabilistic.Structures.Benchmarks;
 
@@ -12,7 +12,7 @@ public abstract class BaseTopKBenchmarks
 {
 
 #nullable disable
-    private TopK<int> topK;
+    private HeavyKeeper<int> topK;
     private int _firstItem;
     private int _lastItem;
 
@@ -30,7 +30,7 @@ public abstract class BaseTopKBenchmarks
     [GlobalSetup]
     public void GlobalSetup()
     {
-        topK = new TopK<int>(K, Depth, K * 100, 0.9);
+        topK = new HeavyKeeper<int>(K, Depth, K * 100, 0.9);
         Parallel.For(0, K * 100, _ =>
         {
             topK.Add(_random.Next(0, K * 2));

@@ -1,6 +1,6 @@
-﻿using Probabilistic.Structures.TopKImpl;
+﻿using Probabilistic.Structures.HeavyKeeperImpl;
 
-TopK<int> topK = new(k: 10, depth: 5, width: 1000, decay: 0.9);
+HeavyKeeper<int> topK = new(k: 10, depth: 5, width: 1000, decay: 0.9);
 
 var consuming = Task.Run(async () =>
 {

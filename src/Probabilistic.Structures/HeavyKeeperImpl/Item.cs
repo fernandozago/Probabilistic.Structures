@@ -1,4 +1,4 @@
-﻿namespace Probabilistic.Structures.TopKImpl.Base;
+﻿namespace Probabilistic.Structures.HeavyKeeperImpl;
 
 public class Item<T>
     where T : IEquatable<T>

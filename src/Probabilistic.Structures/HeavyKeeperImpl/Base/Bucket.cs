@@ -1,4 +1,4 @@
-﻿namespace Probabilistic.Structures.TopKImpl.Base;
+﻿namespace Probabilistic.Structures.HeavyKeeperImpl.Base;
 
 internal class Bucket
 {
@@ -6,7 +6,7 @@ internal class Bucket
     private uint _fingerprint;
     private readonly Random _random =
 #if NET5_0
-        new (Guid.NewGuid().GetHashCode());
+        new(Guid.NewGuid().GetHashCode());
 #else
         Random.Shared;
 #endif

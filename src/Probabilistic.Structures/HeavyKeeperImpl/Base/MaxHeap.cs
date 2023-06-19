@@ -1,4 +1,4 @@
-﻿namespace Probabilistic.Structures.TopKImpl.Base;
+﻿namespace Probabilistic.Structures.HeavyKeeperImpl.Base;
 
 internal class MaxHeap<T>
     where T : IEquatable<T>

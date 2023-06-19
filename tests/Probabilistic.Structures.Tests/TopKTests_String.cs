@@ -1,11 +1,11 @@
-﻿using Probabilistic.Structures.TopKImpl;
+﻿using Probabilistic.Structures.HeavyKeeperImpl;
 
 namespace TopKVal.Tests
 {
     [TestFixture]
     public class TopKTests_String
     {
-        private TopK<string> subject = new(k: 3, depth: 4, width: 100, decay: 1.05);
+        private HeavyKeeper<string> subject = new(k: 3, depth: 4, width: 100, decay: 1.05);
 
         [Test]
         public void Count_ReturnsZero_WhenQueriedForUnknownInteger()
@@ -130,9 +130,12 @@ namespace TopKVal.Tests
 
             var result = subject.Top();
 
-            Assert.That(result, Has.Length.EqualTo(1));
-            Assert.That(result[0].Data, Is.EqualTo("foo"));
-            Assert.That(result[0].Count, Is.EqualTo(3));
+            Assert.Multiple(() =>
+            {
+                Assert.That(result, Has.Length.EqualTo(1));
+                Assert.That(result[0].Data, Is.EqualTo("foo"));
+                Assert.That(result[0].Count, Is.EqualTo(3));
+            });
         }
 
         [Test]

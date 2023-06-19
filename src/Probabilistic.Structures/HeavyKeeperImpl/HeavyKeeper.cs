@@ -1,13 +1,13 @@
-﻿using Probabilistic.Structures.TopKImpl.Base;
+﻿using Probabilistic.Structures.HeavyKeeperImpl.Base;
 
-namespace Probabilistic.Structures.TopKImpl;
+namespace Probabilistic.Structures.HeavyKeeperImpl;
 
 #nullable disable
-public sealed class TopK<T>
+public sealed class HeavyKeeper<T>
     where T : IEquatable<T>
 {
 
-    private readonly object _syncRoot = new ();
+    private readonly object _syncRoot = new();
     private int _k;
     private int _width;
     private int _depth;
@@ -22,7 +22,7 @@ public sealed class TopK<T>
     /// <param name="depth">How many arrays we want to create a fingerprint of items</param>
     /// <param name="width">How many buckets we have inside each array</param>
     /// <param name="decay">How often the items will be decaying</param>
-    public TopK(int k, int depth, int width, double decay)
+    public HeavyKeeper(int k, int depth, int width, double decay)
     {
         Reset(k, depth, width, decay);
     }
