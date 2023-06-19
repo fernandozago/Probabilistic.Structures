@@ -2,7 +2,7 @@
 
 namespace Probabilistic.Structures.Benchmarks.HeavyKeeper.Benchmarks;
 
-public class HeavyKeeperBenchmarks : BaseHeavyKeeper
+public class HeavyKeeper_Simple : BaseHeavyKeeper
 {
     [Params(10)]
     public override int K { get; set; }
@@ -11,7 +11,7 @@ public class HeavyKeeperBenchmarks : BaseHeavyKeeper
     public override int Depth { get; set; }
 }
 
-public class TopK_FullBench : BaseHeavyKeeper
+public class HeavyKeeper_Full : BaseHeavyKeeper
 {
     [Params(10, 25, 50, 100)]
     public override int K { get; set; }

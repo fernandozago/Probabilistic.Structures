@@ -22,12 +22,12 @@ do
 
 void RunSimpleBench()
 {
-    Console.WriteLine($"\nRunning {nameof(HeavyKeeperBenchmarks)}");
-    BenchmarkRunner.Run<HeavyKeeperBenchmarks>();
+    Console.WriteLine($"\nRunning {nameof(HeavyKeeper_Simple)}");
+    BenchmarkRunner.Run<HeavyKeeper_Simple>();
 }
 
 void Run_FullBench()
 {
-    Console.WriteLine($"\nRunning {nameof(TopK_FullBench)}");
-    BenchmarkRunner.Run<TopK_FullBench>();
+    Console.WriteLine($"\nRunning {nameof(HeavyKeeper_Simple)}");
+    BenchmarkRunner.Run<HeavyKeeper_Simple>();
 }
