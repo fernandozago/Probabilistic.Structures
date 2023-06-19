@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{3E0C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{0DA0F382-BF07-409B-8C97-DA251467FE0D}"
 	ProjectSection(SolutionItems) = preProject
-		.github\workflows\nuget.probabilistic.structures.yml = .github\workflows\nuget.probabilistic.structures.yml
+		.github\workflows\nuget__probabilisticstructures.yml = .github\workflows\nuget__probabilisticstructures.yml
 	EndProjectSection
 EndProject
 Global
