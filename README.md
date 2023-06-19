@@ -27,3 +27,4 @@ foreach (var item in topk.Top())
     Console.WriteLine(item);
 }
 ```
+![image](https://github.com/fernandozago/Probabilistic.Structures/assets/12010709/7c4f1450-867b-4978-9b1e-066ad7a32352)
