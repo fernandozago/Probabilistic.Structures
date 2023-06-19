@@ -5,23 +5,19 @@ namespace TopKVal.Tests
     [TestFixture]
     public class TopKTests_Int
     {
-        private TopK<int> subject;
-
-        [SetUp]
-        public void Setup()
-        {
-            subject = new (k: 3, depth: 4, width: 100, decay: 1.05);
-        }
+        private TopK<int> subject = new(k: 3, depth: 4, width: 100, decay: 1.05);
 
         [Test]
         public void Count_ReturnsZero_WhenQueriedForUnknownInteger()
         {
+            subject.Reset();
             Assert.That(subject.Count(1), Is.EqualTo(0));
         }
 
         [Test]
         public void Count_ReturnsOne_ForSingleItem()
         {
+            subject.Reset();
             subject.Add(1);
             Assert.That(subject.Count(1), Is.EqualTo(1));
         }
@@ -29,6 +25,7 @@ namespace TopKVal.Tests
         [Test]
         public void Count_ReturnsBiggerCount_ForMultipleItems()
         {
+            subject.Reset();
             subject.Add(1);
             subject.Add(1);
             subject.Add(1);
@@ -38,6 +35,7 @@ namespace TopKVal.Tests
         [Test]
         public void Count_MultipleIntegersCanBeCounted()
         {
+            subject.Reset();
             subject.Add(1);
             subject.Add(1);
             subject.Add(1);
@@ -56,12 +54,14 @@ namespace TopKVal.Tests
         [Test]
         public void Query_ReturnsFalse_ForEmptyTopK()
         {
+            subject.Reset();
             Assert.That(subject.Any(1), Is.False);
         }
 
         [Test]
         public void Query_ReturnsTrue_ForAnItemInTheTopK()
         {
+            subject.Reset();
             subject.Add(1);
             subject.Add(1);
             subject.Add(1);
@@ -79,6 +79,7 @@ namespace TopKVal.Tests
         [Test]
         public void Query_ReturnsFalse_ForAnItemDroppedOutOfTheTopK()
         {
+            subject.Reset();
             subject.Add(1);
             subject.Add(1);
             subject.Add(1);
@@ -96,6 +97,7 @@ namespace TopKVal.Tests
         [Test]
         public void Query_ReturnsFalse_ForAnItemNeverAddedToTheTopK()
         {
+            subject.Reset();
             subject.Add(1);
             subject.Add(1);
             subject.Add(1);
@@ -113,6 +115,7 @@ namespace TopKVal.Tests
         [Test]
         public void Top_ReturnsEmptyArray_ForEmptyTopK()
         {
+            subject.Reset();
             var result = subject.Top().ToArray();
             Assert.That(result, Is.Empty);
         }
@@ -120,6 +123,7 @@ namespace TopKVal.Tests
         [Test]
         public void Top_ReturnsCountOfSingleItem()
         {
+            subject.Reset();
             subject.Add(1);
             subject.Add(1);
             subject.Add(1);
@@ -134,6 +138,7 @@ namespace TopKVal.Tests
         [Test]
         public void Top_ReturnsOrderedCountOfMultipleItems()
         {
+            subject.Reset();
             subject.Add(1);
             subject.Add(1);
             subject.Add(1);
@@ -158,6 +163,7 @@ namespace TopKVal.Tests
         [Test]
         public void Top_ReturnsOrderedCountOfMultipleItems_NegativeNumbers()
         {
+            subject.Reset();
             subject.Add(-1);
             subject.Add(-1);
             subject.Add(-1);
@@ -182,6 +188,7 @@ namespace TopKVal.Tests
         [Test]
         public void Top_DoesNotCountMoreThanKItems()
         {
+            subject.Reset();
             subject.Add(1);
             subject.Add(1);
             subject.Add(1);
@@ -247,6 +254,9 @@ namespace TopKVal.Tests
                     Assert.That(topItems[i].Count, Is.EqualTo(sortedValues[topItems[i].Data]));
                 });
             }
+
+            internalSubject.Reset();
+            Assert.That(internalSubject.Top(), Has.Length.EqualTo(0));
         }
     }
 }

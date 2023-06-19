@@ -1,95 +1,89 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
+﻿namespace Probabilistic.Structures.TopKImpl.Base;
 
-namespace Probabilistic.Structures.TopKImpl.Base
+internal class MaxHeap<T>
+    where T : IEquatable<T>
 {
-    internal readonly struct MaxHeap<T>
-        where T : IEquatable<T>
+    private readonly int _k;
+    private readonly List<Item<T>> _heap;
+
+    internal MaxHeap(int k)
     {
-        private readonly int _k;
-        private readonly List<Item<T>> _heap;
+        _k = k;
+        _heap = new List<Item<T>>(k);
+    }
 
-        internal MaxHeap(int k)
+    internal void Add(T data, long count)
+    {
+        if ((count <= 0 || _heap.Count >= _k) && count < _heap[^1].Count) //dont bother trying to updating or adding when the count is less than the lower values on this MaxHeap
         {
-            _k = k;
-            _heap = new List<Item<T>>(k);
+            return;
         }
 
-        internal readonly void Add(T data, long count)
+        if (!TryUpdateExisting(data))
         {
-            if ((count <= 0 || _heap.Count >= _k) && count < _heap[^1].Count) //dont bother trying to updating or adding when the count is less than the lower values on this MaxHeap
+            if (_heap.Count < _k) //if there is space on the Item<T>[], we add it to the list
             {
-                return;
+                _heap.Add(new(data, count));
             }
-
-            if (!TryUpdateExisting(data))
+            else if (count >= _heap[^1].Count)
             {
-                if (_heap.Count < _k) //if there is space on the Item<T>[], we add it to the list
-                {
-                    _heap.Add(new(data, count));
-                }
-                else if (count >= _heap[^1].Count)
-                {
-                    ref var refItem = ref CollectionsMarshal.AsSpan(_heap)[^1];
-                    refItem.Set(data, count);
-                    Rollup();
-                }
+                _heap[^1].Set(data, count);
+                Rollup();
+            }
+        }
+    }
+
+    internal Item<T>[] Top() =>
+        _heap.ToArray();
+
+    internal int IndexOf(T data)
+    {
+        for (int i = 0; i < _heap.Count; i++)
+        {
+            if (_heap[i].Is(data))
+            {
+                return i;
             }
         }
 
-        internal readonly Item<T>[] Top() =>
-            _heap.ToArray();
+        return -1;
+    }
 
-        internal readonly int IndexOf(T data)
+    internal bool CountIfAny(T data, out long count)
+    {
+        if (IndexOf(data) is int i && i > -1)
         {
-            for (int i = 0; i < _heap.Count; i++)
-            {
-                if (_heap[i].Is(data))
-                {
-                    return i;
-                }
-            }
-
-            return -1;
+            count = _heap[i].Count;
+            return true;
         }
 
-        internal readonly bool CountIfAny(T data, out long count)
+        count = 0;
+        return false;
+    }
+
+    private bool TryUpdateExisting(T data)
+    {
+        for (int i = 0; i < _heap.Count; i++)
         {
-            if (IndexOf(data) is int i && i > -1)
+            if (_heap[i].Is(data))
             {
-                count = _heap[i].Count;
+                _heap[i].Increment();
+                Rollup(i);
                 return true;
             }
-
-            count = 0;
-            return false;
         }
+        return false;
+    }
 
-        private readonly bool TryUpdateExisting(T data)
+    private void Rollup() =>
+        Rollup(_heap.Count - 1);
+
+    private void Rollup(int index)
+    {
+        int previousIndex = index - 1;
+        while (previousIndex >= 0 && _heap[previousIndex].Count < _heap[index].Count)
         {
-            for (int i = 0; i < _heap.Count; i++)
-            {
-                if (_heap[i].Is(data))
-                {
-                    ref var item = ref CollectionsMarshal.AsSpan(_heap)[i];
-                    item.Increment();
-                    Rollup(i);
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private readonly void Rollup() =>
-            Rollup(_heap.Count - 1);
-
-        private readonly void Rollup(int index)
-        {
-            int previousIndex = index - 1;
-            while (previousIndex >= 0 && _heap[previousIndex].Count < _heap[index].Count)
-            {
-                (_heap[index], _heap[previousIndex]) = (_heap[previousIndex--], _heap[index--]);
-            }
+            (_heap[index], _heap[previousIndex]) = (_heap[previousIndex--], _heap[index--]);
         }
     }
 }

@@ -1,21 +1,15 @@
-﻿using System.Runtime.CompilerServices;
+﻿namespace Probabilistic.Structures.TopKImpl.Base;
 
-namespace Probabilistic.Structures.TopKImpl.Base;
-
-internal struct Bucket
+internal class Bucket
 {
     private long _counter;
     private uint _fingerprint;
-    private readonly Random _random;
-
-    public Bucket()
-    {
+    private readonly Random _random =
 #if NET5_0
-        _random = new Random(Guid.NewGuid().GetHashCode());
+        new (Guid.NewGuid().GetHashCode());
 #else
-        _random = Random.Shared;
+        Random.Shared;
 #endif
-    }
 
     internal long Set(uint fingerprint, double decay)
     {
@@ -32,7 +26,7 @@ internal struct Bucket
         return 0;
     }
 
-    internal readonly long Count(uint fingerprint)
+    internal long Count(uint fingerprint)
     {
         if (_fingerprint != fingerprint)
             return 0;
@@ -40,7 +34,6 @@ internal struct Bucket
         return _counter;
     }
 
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private bool Decay(double decay)
     {
         if (_counter > 0)
