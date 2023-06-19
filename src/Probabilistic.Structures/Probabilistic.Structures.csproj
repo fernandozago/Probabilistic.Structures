@@ -11,6 +11,11 @@
 		<Company>Fernando Zago</Company>
 		<PackageDescription>This package contains some probabilistic structures</PackageDescription>
 		<RepositoryUrl>https://github.com/fernandozago/Probabilistic.Structures</RepositoryUrl>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 </Project>

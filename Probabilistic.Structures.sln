@@ -26,11 +26,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{56F4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HeavyKeeper.Sample", "samples\TopK.Sample\HeavyKeeper.Sample.csproj", "{DE1FA9B9-3A47-4E7F-933C-AEC84B4CDB44}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{957E5CA1-3463-461C-82AE-B097D3C34B7D}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloomFilter.Sample", "samples\BloomFilter.Sample\BloomFilter.Sample.csproj", "{4D7B29E2-D21D-4DF4-9D7E-1EB7C230159B}"
 EndProject
 Global
