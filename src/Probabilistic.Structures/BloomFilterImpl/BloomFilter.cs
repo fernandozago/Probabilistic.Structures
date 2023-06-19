@@ -5,31 +5,49 @@ namespace Probabilistic.Structures.BloomFilterImpl;
 #nullable disable
 public class BloomFilter<T>
 {
-    private readonly uint[] _seeds;
-    private readonly int _m;
-    private readonly int _k;
+    private readonly object _syncRoot = new();
 
+    private bool _isLocked = false;
+    private int _m;
+    private int _k;
+
+    private uint[] _seeds;
     private Bucket[] _buckets;
 
     public BloomFilter(double errorRate, int capacity)
     {
-        _m = (int)Math.Ceiling((capacity * Math.Log(errorRate)) / Math.Log(1 / Math.Pow(2, Math.Log(2))));
-        _k = (int)Math.Ceiling((_m / capacity) * Math.Log(2));
+        Reset(errorRate, capacity);
+    }
 
-        _seeds = Enumerable.Range(0, _k).Select(_ => (uint)Guid.NewGuid().GetHashCode()).ToArray();
-        Reset();
+    public void Reset(double errorRate, int capacity)
+    {
+        lock (_syncRoot)
+        {
+            _m = (int)Math.Ceiling((capacity * Math.Log(errorRate)) / Math.Log(1 / Math.Pow(2, Math.Log(2))));
+            _k = (int)Math.Ceiling((_m / capacity) * Math.Log(2));
+
+            _seeds = Enumerable.Range(0, _k).Select(_ => (uint)Guid.NewGuid().GetHashCode()).ToArray();
+            _buckets = Enumerable.Range(0, _m).Select(_ => new Bucket()).ToArray();
+        }
     }
 
     public void Reset()
     {
-        _buckets = Enumerable.Range(0, _m).Select(_ => new Bucket()).ToArray();
+        lock (_syncRoot)
+        {
+            _seeds = Enumerable.Range(0, _k).Select(_ => (uint)Guid.NewGuid().GetHashCode()).ToArray();
+            _buckets = Enumerable.Range(0, _m).Select(_ => new Bucket()).ToArray();
+        }
     }
 
     public void Add(T data)
     {
-        for (var i = 0; i < _k; i++)
+        lock (_syncRoot)
         {
-            GetBucket(data, i).Set();
+            for (var i = 0; i < _k; i++)
+            {
+                GetBucket(data, i).Set();
+            }
         }
     }
 
