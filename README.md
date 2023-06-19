@@ -1,7 +1,9 @@
 # Probabilistic.Structures
 
 - Added TopK Probabilistic Structure
+- Top-K: What are the k most frequent values in the data stream?
 ```C#
+using Probabilistic.Structures.TopKImpl;
 
 /// <param name="k">Size of the Top items that you want be tracked</param>
 /// <param name="depth">How many arrays you want to create to keep track of items fingerprints</param>
@@ -10,21 +12,11 @@
 TopK<int> topk = new TopK<int>(4, 5, 1000, 0.9);
 
 // Add as many as you want
-topk.Add(5);
-topk.Add(4);
-topk.Add(4);
-topk.Add(3);
-topk.Add(3);
-topk.Add(3);
-topk.Add(2);
-topk.Add(2);
-topk.Add(2);
-topk.Add(2);
-topk.Add(1);
-topk.Add(1);
-topk.Add(1);
-topk.Add(1);
-topk.Add(1);
+for (var i = 0; i <= 5; i++)
+    for (var z = 1; z <= i; z++)
+    {
+        topk.Add(z);
+    }
 
 //{ Value: '1', Count: 5 }
 //{ Value: '2', Count: 4 }
@@ -34,5 +26,4 @@ foreach (var item in topk.Top())
 {
     Console.WriteLine(item);
 }
-
 ```
