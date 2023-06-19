@@ -5,6 +5,12 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<LangVersion>latest</LangVersion>
+
+		<PackageId>Probabilistic.Structures</PackageId>
+		<Authors>Fernando Zago</Authors>
+		<Company>Fernando Zago</Company>
+		<PackageDescription>This package contains some probabilistic structures</PackageDescription>
+		<RepositoryUrl>https://github.com/fernandozago/Probabilistic.Structures</RepositoryUrl>
 	</PropertyGroup>
 
 </Project>

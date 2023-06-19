@@ -15,6 +15,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Probabilistic.Structures.Be
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Probabilistic.Structures.Tests", "tests\Probabilistic.Structures.Tests.NET5\Probabilistic.Structures.Tests.csproj", "{9D679973-C2B1-4B19-9C70-6BB5FEF981C5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{3E0C67F9-7472-4F96-BBE8-64F40F019513}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{0DA0F382-BF07-409B-8C97-DA251467FE0D}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\nuget.probabilistic.structures.yml = .github\workflows\nuget.probabilistic.structures.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +48,7 @@ Global
 		{168EEE91-DE2D-4D0E-8485-AC7EE2F2A1FB} = {C7DE2F8C-F90C-425C-B3D9-44A64FBF3DD2}
 		{409E45A6-5CC5-4DDB-83C4-C23DBCD521F5} = {7CF0066D-FA05-4026-9044-20D5B5CF57A2}
 		{9D679973-C2B1-4B19-9C70-6BB5FEF981C5} = {A3CEE19B-AA6C-408C-A96C-B26A6600D4C3}
+		{0DA0F382-BF07-409B-8C97-DA251467FE0D} = {3E0C67F9-7472-4F96-BBE8-64F40F019513}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71ABD0BD-34D0-4476-AD06-DFDBAA0F8141}
