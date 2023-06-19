@@ -1,9 +1,8 @@
 # Probabilistic.Structures
 
-- Added TopK Probabilistic Structure
+- Added Heavy Keeper Probabilistic Data Structure
 - Top-K: What are the k most frequent values in the data stream?
- 
-* Install the package: https://www.nuget.org/packages/Probabilistic.Structures
+  * Install the package: https://www.nuget.org/packages/Probabilistic.Structures
 
 ```C#
 using Probabilistic.Structures.TopKImpl;
@@ -31,3 +30,17 @@ foreach (var item in topk.Top())
 }
 ```
 ![image](https://github.com/fernandozago/Probabilistic.Structures/assets/12010709/7c4f1450-867b-4978-9b1e-066ad7a32352)
+
+- Added Bloom Filter Probabilistic Data Structure
+  * Install the package: https://www.nuget.org/packages/Probabilistic.Structures
+
+```C#
+using Probabilistic.Structures.BloomFilterImpl;
+
+BloomFilter<int> bf = new BloomFilter<int>(0.001, 1000);
+
+bf.Add(1);
+Console.WriteLine($"1 exists ? {bf.Exists(1)}");
+Console.WriteLine($"2 exists ? {bf.Exists(2)}");
+```
+

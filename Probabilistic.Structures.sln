@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".docs", ".docs", "{957E5CA1
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BloomFilter.Sample", "samples\BloomFilter.Sample\BloomFilter.Sample.csproj", "{4D7B29E2-D21D-4DF4-9D7E-1EB7C230159B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{DE1FA9B9-3A47-4E7F-933C-AEC84B4CDB44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE1FA9B9-3A47-4E7F-933C-AEC84B4CDB44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE1FA9B9-3A47-4E7F-933C-AEC84B4CDB44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D7B29E2-D21D-4DF4-9D7E-1EB7C230159B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D7B29E2-D21D-4DF4-9D7E-1EB7C230159B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D7B29E2-D21D-4DF4-9D7E-1EB7C230159B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D7B29E2-D21D-4DF4-9D7E-1EB7C230159B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 		{0DA0F382-BF07-409B-8C97-DA251467FE0D} = {3E0C67F9-7472-4F96-BBE8-64F40F019513}
 		{7A21B863-CCD1-4151-948E-858E82BBCE3B} = {A3CEE19B-AA6C-408C-A96C-B26A6600D4C3}
 		{DE1FA9B9-3A47-4E7F-933C-AEC84B4CDB44} = {56F46F20-6C91-4890-93FD-D1E6931EA82E}
+		{4D7B29E2-D21D-4DF4-9D7E-1EB7C230159B} = {56F46F20-6C91-4890-93FD-D1E6931EA82E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {71ABD0BD-34D0-4476-AD06-DFDBAA0F8141}
