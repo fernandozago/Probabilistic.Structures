@@ -40,22 +40,22 @@ public class BloomFilter<T>
         }
     }
 
-    public void Add(T data)
+    public void Add(T value)
     {
         lock (_syncRoot)
         {
             for (var i = 0; i < _k; i++)
             {
-                GetBucket(data, i).Set();
+                GetBucket(value, i).Set();
             }
         }
     }
 
-    public bool Exists(T data)
+    public bool Exists(T value)
     {
         for (var i = 0; i < _k; i++)
         {
-            if (!GetBucket(data, i).IsSet)
+            if (!GetBucket(value, i).IsSet)
                 return false;
         }
 
